@@ -34,7 +34,7 @@
               String nomeUser = (String) session.getAttribute("nome");
               out.write(nomeUser);
             %> !!
-        <h3>
+        </h3>
         <div class="topnav a">
             <a href="#"><i class="fa fa-envelope"></i> </a>
             <a href="#"><i class="fa fa-user"></i></a>

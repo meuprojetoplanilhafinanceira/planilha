@@ -26,6 +26,8 @@ public class Despesa {
     private String descricao;
     private float valor;
     private Date data;
+    private Date dataInicial;
+    private Date dataFinal;
 
     public boolean salvar() {
         String sql = "insert into despesa(idusuario, idcategoria, descricao, valor, data)";
@@ -94,7 +96,31 @@ public class Despesa {
         }
         return despesa;
     }
+    
+    public Despesa consultar(int id) {
+        Connection con = Conexao.conectar();
+        String sql = "select id, descricao, valor, data"
+                + " from despesa where id = ?";
+        Despesa despesa = null;
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                despesa = new Despesa();
+                despesa.setId(id);
+                despesa.setDescricao(rs.getString("descricao"));
+                despesa.setValor(rs.getFloat("valor"));
+                despesa.setData(rs.getDate("data"));
 
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        return despesa;
+    }
+    
      public ResultSet consultarInner(int pIdUser) {
         Connection con = Conexao.conectar();
         String sql = "select d.id, d.idusuario, d.idcategoria, c.descricao categoria, "
@@ -113,28 +139,112 @@ public class Despesa {
         }
         return rs;
     }
+      
+    public float getTotalDespesa(int idUser, Date dataInicio, Date dataFim){
+       List<Despesa> lista =  consultaLancamentosByIntervaloData(idUser,dataInicio, dataFim, true);
+       float valor = 0f;
+       for (Despesa d : lista){
+           valor += d.getValor();
+       }
+       return valor;
+    }
      
-    public List<Despesa> consultar(int pIdUser) { // Método tem que ser modificado para usar (não está pronto)
-        List<Despesa> lista = new ArrayList<>();
+     public List<Despesa> consultaLancamentosByIntervaloData(int idUser, Date dataInicio, Date dataFim, boolean agrupar) {
         Connection con = Conexao.conectar();
-        String sql = "select d.id, d.idusuario, d.idcategoria, c.descricao categoria, "
-                + "d.descricao, d.valor, d.data "
-                + "from despesa d, categoria c "
-                + "where d.idcategoria = c.id "
-                + "and d.idusuario = ? "
-                + "order by data;";
+        List<Despesa> lista = new ArrayList<>();
+        String sql = "select despesa.descricao, despesa.data, ";
+
+        if (agrupar) {
+            sql += " sum(despesa.valor) as valor ";
+        } else {
+            sql += " despesa.valor   ";
+        }
+
+        sql += " from despesa ";
+        sql += " where despesa.idusuario = ?";
+        sql += " and despesa.data between ? and ? ";
+        if (agrupar) {
+            sql += " group by despesa.descricao, despesa.data ";
+        }
+        sql += " order by despesa.descricao";
+
+        Despesa despesa = null;
         try {
             PreparedStatement stm = con.prepareStatement(sql);
-            stm.setInt(1, pIdUser);
+            stm.setInt(1, idUser);
+            stm.setDate(2, dataInicio);
+            stm.setDate(3, dataFim);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                despesa = new Despesa();
+                despesa.setDescricao(rs.getString("descricao"));
+                despesa.setValor(rs.getFloat("valor"));
+                despesa.setData(rs.getDate("data"));
+                lista.add(despesa);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        return lista;
+    }
+     
+     public List<Despesa> consultaLancamentosByIntervaloData(int idUser, Date dataInicio, Date dataFim, boolean agrupar, int categoria) {
+        Connection con = Conexao.conectar();
+        List<Despesa> lista = new ArrayList<>();
+        String sql = "select despesa.descricao, despesa.data, ";
+
+        if (agrupar) {
+            sql += " sum(despesa.valor) as valor ";
+        } else {
+            sql += " despesa.valor   ";
+        }
+
+        sql += " from despesa ";
+        sql += " where despesa.idusuario = ?";
+        sql += " and despesa.data between ? and ? ";
+        sql += " and despesa.idcategoria = ?";
+        if (agrupar) {
+            sql += " group by despesa.descricao, despesa.data ";
+        }
+        sql += " order by despesa.descricao";
+
+        Despesa despesa = null;
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, idUser);
+            stm.setDate(2, dataInicio);
+            stm.setDate(3, dataFim);
+            stm.setInt(4, categoria);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                despesa = new Despesa();
+                despesa.setDescricao(rs.getString("descricao"));
+                despesa.setValor(rs.getFloat("valor"));
+                despesa.setData(rs.getDate("data"));
+                lista.add(despesa);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+        }
+        return lista;
+    }
+     
+     public List<Despesa> consultar() {
+        List<Despesa> lista = new ArrayList<>();
+        Connection con = Conexao.conectar();
+        String sql = "select id, descricao, valor, data from despesa";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Despesa despesa = new Despesa();
                 despesa.setId(rs.getInt("id"));
-                despesa.setIdUsuario(rs.getInt("idusuario"));
-                despesa.setIdCategoria(rs.getInt("idcategoria"));
                 despesa.setDescricao(rs.getString("descricao"));
                 despesa.setValor(rs.getFloat("valor"));
                 despesa.setData(rs.getDate("data"));
+
                 lista.add(despesa);
             }
 
@@ -207,4 +317,21 @@ public class Despesa {
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
+
+    public Date getDataInicial() {
+        return dataInicial;
+    }
+
+    public void setDataInicial(Date dataInicial) {
+        this.dataInicial = dataInicial;
+    }
+
+    public Date getDataFinal() {
+        return dataFinal;
+    }
+
+    public void setDataFinal(Date dataFinal) {
+        this.dataFinal = dataFinal;
+    }
+    
 }

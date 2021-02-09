@@ -471,6 +471,53 @@ and open the template in the editor.
         padding: 17px;
     }
 
+    .ret12{
+        position: absolute;
+        width: 350px;
+        height: 50px;
+        left: 200px;
+        top: 200px;
+        background-color: gold;    
+        border-style: ridge;
+        font-family: serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+        padding: 7px;
+    }
+    
+    .ret13{
+        position: absolute;
+        width: 350px;
+        height: 50px;
+        left: 200px;
+        top: 250px;
+        background-color: gold;    
+        border-style: ridge;
+        font-family: serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+        padding: 7px;
+    }
+    
+    .ret14{
+        position: absolute;
+        width: 350px;
+        height: 50px;
+        left: 200px;
+        top: 300px;
+        background-color: gold;    
+        border-style: ridge;
+        font-family: serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+        padding: 7px;
+    }
     .txt12{
         position: absolute;
         left: 400px;
@@ -682,7 +729,7 @@ and open the template in the editor.
         margin-top: 5px;
         margin-left: 3px;
         width: 300px;
-        top: 397px;
+        top: 407px;
         left: 505px;
 
         }
@@ -690,11 +737,11 @@ and open the template in the editor.
     .resumo{
         position: absolute;
         background-color: sandybrown;
-        padding: 10px;
+        padding: 20px;
         margin-top: 5px;
         margin-left: 3px;
         width: 300px;
-        top: 397px;
+        top: 407px;
         left: 905px;
         height: 200px;    
         }
@@ -942,6 +989,18 @@ and open the template in the editor.
       border-radius: 30px;
       background-color: thistle;
       padding: 20px;
+      border-style: ridge;
+    }
+    
+    .container3 {
+      position: absolute;
+      width: 50%;
+      left: 30%;
+      top: 12%;
+      height: 50%;
+      border-radius: 30px;
+      background-color: bisque;
+      padding: 30px;
       border-style: ridge;
     }
     

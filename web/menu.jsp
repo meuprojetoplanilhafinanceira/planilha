@@ -73,7 +73,8 @@
         <h2>Gastos</h2>
         <ul class="b">
             <li><a href="cadastroDespesa.jsp">Lançar novo Gasto</a> </li>
-            <li><a href="consultaDespesa.jsp">Consultas</a></li>
+            <li><a href="consultaDespesa.jsp">Consulta Geral</a></li>
+            <li><a href="consultaDespesaDetalhada.jsp">Consulta por Data</a></li>
         </ul>   
         </div>
        
@@ -82,7 +83,8 @@
         <h2>Rendas</h2>
         <ul class="b">
             <li><a href="cadastroReceita.jsp">Lançar nova Renda</a> </li>
-            <li><a href="consultaReceita.jsp">Consultas</a></li>
+            <li><a href="consultaReceita.jsp">Consulta Geral</a></li>
+            <li><a href="consultaReceitaDetalhada.jsp">Consulta por Data</a></li>
         </ul>
         </div>
       
@@ -107,9 +109,7 @@
         <div class='fas fa-balance-scale' style='font-size:48px'></div>
         <h2>Resumo Financeiro</h2>
         <ul class="b">
-            <li><a href="consultaDespesa.jsp"> Meus Gastos</a></li>     
-            <li><a href="consultaReceita.jsp"> Minhas Rendas</a></li>
-            <li><a href="#"> Meu Saldo</a></li>
+            <li><a href="consultaBalancete.jsp"> Meu Saldo </a></li>
         </ul>
         </div>
         

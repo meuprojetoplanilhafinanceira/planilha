@@ -125,6 +125,28 @@ public class Categoria {
         }
         return true;
     }
+    
+     public List<Categoria> consultar(){
+        List<Categoria> lista = new ArrayList<>();
+        Connection con = Conexao.conectar();
+        String sql = "select id, descricao, tipo from categoria";
+        try {
+           PreparedStatement stm = con.prepareStatement(sql);
+           ResultSet rs = stm.executeQuery();
+           while(rs.next()){
+            Categoria categoria = new Categoria();
+            categoria.setId(rs.getInt("id"));
+            categoria.setDescricao(rs.getString("descricao"));
+            categoria.setTipo(rs.getString("tipo"));
+            
+            lista.add(categoria);
+           }
+           
+        } catch (SQLException ex) {
+           System.out.println("Erro: " + ex.getMessage());
+        }      
+        return lista; 
+    }
 
     public List<Categoria> consultar(int pIdUser, String pTipo) {
         List<Categoria> lista = new ArrayList<>();
