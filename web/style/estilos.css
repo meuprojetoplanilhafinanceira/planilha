@@ -17,7 +17,6 @@ and open the template in the editor.
 
     }
 
-
     .circle1{
             position: absolute;
             border-radius: 30%;
@@ -67,7 +66,7 @@ and open the template in the editor.
     a{
         color: black;
         text-decoration: none;
-
+        
     }
 
     .logo{
@@ -474,50 +473,51 @@ and open the template in the editor.
     .ret12{
         position: absolute;
         width: 350px;
-        height: 50px;
-        left: 200px;
-        top: 200px;
+        height: 160px;
+        left: 100px;
+        top: 230px;
         background-color: gold;    
         border-style: ridge;
         font-family: serif;
         font-style: normal;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
         text-align: center;
-        padding: 7px;
+        padding: 15px;
     }
     
     .ret13{
         position: absolute;
         width: 350px;
-        height: 50px;
-        left: 200px;
-        top: 250px;
-        background-color: gold;    
+        height: 160px;
+        left: 500px;
+        top: 230px;
+        background-color: coral;    
         border-style: ridge;
         font-family: serif;
         font-style: normal;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
         text-align: center;
-        padding: 7px;
+        padding: 15px;
     }
     
     .ret14{
         position: absolute;
-        width: 350px;
-        height: 50px;
-        left: 200px;
-        top: 300px;
-        background-color: gold;    
+        width: 400px;
+        height: 85px;
+        left: 270px;
+        top: 415px;
+        background-color: white;
         border-style: ridge;
         font-family: serif;
         font-style: normal;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 50px;
         text-align: center;
-        padding: 7px;
+        padding: 4px;
     }
+    
     .txt12{
         position: absolute;
         left: 400px;
@@ -583,23 +583,22 @@ and open the template in the editor.
 
     }
 
-@media screen and (max-width: 400px) {
-    .topnav a {
-        float: none;
-        width: 100%;
-        }
-    }
+
 
 /* Adicione um efeito de cartão para artigos */
     .login {
         position: absolute;
         background-color: white;
-        padding: 8px;
+        padding: 9px;
         margin-top: 5px;
-        margin-left: 3px;
-        width: 215px;
+        margin-left: 0px;
+        width: 210px;
         top: 72px;
-
+        font-family: serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        
         }
     
 /* Defina o estilo dos links topnav */
@@ -608,7 +607,7 @@ and open the template in the editor.
         display: block;
         color: black;
         text-align: center;
-        padding: 1px 18px;
+        padding: 3px 18px;
         text-decoration: none;
         }
     
@@ -628,7 +627,7 @@ and open the template in the editor.
         position: absolute;
         width: 543px;
         height: 91px;
-        left:9px;
+        left:8px;
         top: 304px;
         font-family: sans-serif;
         font-style: normal;
@@ -643,25 +642,32 @@ and open the template in the editor.
 
     .menu{
         position: absolute;
-        padding: 5px;
+        padding: 1px;
         margin-top: 1px;
-        margin-left: 3px;
-        width: 285px;
+        margin-left: 0px;
+        width: 300px;
         top: 375px;
-
+        font-family: serif;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 18px;
+        text-align: left;
+          
         }
       
     .menu li {
-          padding: 12px;
-          margin-bottom: 1px;
+          padding: 6px;
+          margin-bottom: 2px;
           background-color: #33b5e5;
           color: black;
+         
         }
 
     .menu ul {
         list-style-type: none;
         margin: 0;
-        padding: 0px;
+        padding: 2px;
+       
         }
 
     .clearfix::after {
@@ -679,6 +685,7 @@ and open the template in the editor.
         list-style-type: none;
         margin: 0;
         padding: 0;
+        
         }
 
     ul.b {
@@ -775,20 +782,6 @@ and open the template in the editor.
       border: 2px solid black;
     }
 
-    .container {
-      position: absolute;
-      width: 60%;
-      left: 20%;
-      top: 11%;
-      height: 80%;
-      border-radius: 5px;
-      background-color: bisque;
-      padding: 20px;
-
-    }
-
-    
-
     * {
       box-sizing: border-box;
     }
@@ -810,18 +803,6 @@ and open the template in the editor.
     label {
       padding: 8px 8px 8px 0;
       display: inline-block;
-    }
-
-    .container1 {
-      position: absolute;
-      width: 80%;
-      left: 15%;
-      top: 10%;
-      height: 79%;
-      border-radius: 5px;
-      background-color: bisque;
-      padding: 1px;
-
     }
 
     .col-25 {
@@ -848,13 +829,6 @@ and open the template in the editor.
 
     }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-      }
-    }
 
     .salvar {
       position: absolute;
@@ -872,6 +846,23 @@ and open the template in the editor.
 
     }
 
+     .consultar {
+      position: absolute;
+      background-color: gainsboro;
+      color: black;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline;
+      font-size: 18px;
+      margin: 4px 4px;
+      cursor: pointer;
+      border: 2px solid black;
+      left: 85%;
+      top: 120px;
+   
+    }
+    
     .cancelar {
       position: absolute;
       background-color: gainsboro;
@@ -964,22 +955,44 @@ and open the template in the editor.
         }
     
     .final{
-        position: absolute;
+        position: fixed;
         background:  lightgray;
         width: 100%;
-        height: 28px;
+        height: 3%;
+       
         bottom: 0px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
-        line-height: 8px;
-        align-items: center;
         text-align: center;
         color: black;
 
     }
+    
+    .container {
+      position: absolute;
+      width: 60%;
+      left: 20%;
+      top: 11%;
+      height: 80%;
+      border-radius: 5px;
+      background-color: bisque;
+      padding: 20px;
 
+    }
+    
+    .container1 {
+      position: absolute;
+      width: 80%;
+      left: 15%;
+      top: 10%;
+      height: 79%;
+      border-radius: 5px;
+      background-color: bisque;
+      padding: 1px;
+
+    }
     .container2 {
       position: absolute;
       width: 25%;
@@ -994,14 +1007,38 @@ and open the template in the editor.
     
     .container3 {
       position: absolute;
-      width: 50%;
-      left: 30%;
+      width: 60%;
+      left: 20%;
       top: 12%;
-      height: 50%;
+      height: 75%;
       border-radius: 30px;
       background-color: bisque;
       padding: 30px;
       border-style: ridge;
+    }
+    
+    .container4 {
+      position: absolute;
+      width: 65%;
+      left: 20%;
+      top: 10%;
+      height: 31%;
+      border-radius: 5px;
+      background-color: bisque;
+      padding: 15px;
+      border-style: groove;
+    }
+    .container5 {
+      position: absolute;
+      width: 65%;
+      left: 20%;
+      top: 10%;
+      height: 31%;
+      border-radius: 5px;
+      background-color: bisque;
+      padding: 15px;
+      top: 320px;
+      border-style: groove;
     }
     
     .sucesso{
@@ -1016,7 +1053,7 @@ and open the template in the editor.
         height: 180px;
         font-family: sans-serif;
         font-style: normal;
-        font-weight: 550;
+        font-weight: 50px;
         font-size: 30px;
         border-style: ridge;
         }
