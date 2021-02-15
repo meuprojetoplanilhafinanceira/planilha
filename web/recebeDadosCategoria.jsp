@@ -31,5 +31,6 @@
     } else {
         msg = "Problemas ao salvar Categoria!";
     }
-    response.sendRedirect("informacao.jsp?msg=" + msg);
+   // response.sendRedirect("informacao.jsp?msg=" + msg);
+    response.sendRedirect("cadastroCategoria.jsp?msg=" + msg);
 %>

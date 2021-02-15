@@ -17,7 +17,7 @@
     Usuario usuario = new Usuario();
     if (usuario.userExiste(request.getParameter("usuario"))) {
         //voltar para cadastro
-        msg = "Usuario já existe";
+        msg = "Usuario ja existe";
         response.sendRedirect("informacao.jsp?msg="+msg);
     } else {
         usuario.setNome(request.getParameter("nome"));
