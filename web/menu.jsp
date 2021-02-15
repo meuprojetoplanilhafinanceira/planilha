@@ -12,7 +12,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/estilos.css">
-        
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="style/estilos.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
     </head>
     <body>
         
@@ -30,9 +35,9 @@
             %> !!
         <h3>
         <div class="topnav a">
-            <a href="#"><img src="imagens/envelope.png"></i> </a>
-            <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
-            <a href="cadastroCategoriaDefault.jsp"><img src="imagens/configura.png"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i> </a>
+            <a href="login.jsp"><i class="fa fa-user"></i></a>
+            <a href="cadastroCategoriaDefault.jsp"><i class="fa fa-cog"></i></a>
         </div>
         </div>
         
@@ -42,13 +47,13 @@
         <div class="clearfix">
         <div class="column">
         <ul>
-            <li><a href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+            <li><a href="menu.jsp" ><i class="fa fa-users fa-fw"></i> MENU </a></li>
+            <li><a href="cadastroDespesa.jsp"><i class="fas fa-comments-dollar"></i>  Seu novo Gasto</a> </li>
+            <li><a href="cadastroReceita.jsp"><i class="fas fa-donate"></i>  Sua nova Renda</a></li>
+            <li><a href="cadastroCategoria.jsp"><i class="fas fa-clipboard"></i>  Crie nova Categoria</a></li>
+            <li><a href="consultaBalancete.jsp"><i class="fas fa-balance-scale"></i>  Resumo Financeiro</a></li>
+            <li><a href="#"><i class="fa fa-bell fa-fw"></i>  Meus Dados</a></li>
+            <li><a href="consultaCategoriaDefault.jsp"><i class="fa fa-cog fa-fw"></i>  Configurações</a></li>
         </ul>
         </div>
         </div>
@@ -64,7 +69,7 @@
             }
         %>
         <div class="gasto">
-        <img src="imagens/gasto1.png">
+        <div class='fas fa-comments-dollar' style='font-size:48px'></div>
         <h2>Gastos</h2>
         <ul class="b">
             <li><a href="cadastroDespesa.jsp">Lançar novo Gasto</a> </li>
@@ -74,7 +79,7 @@
         </div>
        
         <div class="renda">
-        <img src="imagens/renda1.png">
+        <div class='fas fa-donate' style='font-size:48px'></div>
         <h2>Rendas</h2>
         <ul class="b">
             <li><a href="cadastroReceita.jsp">Lançar nova Renda</a> </li>
@@ -84,7 +89,7 @@
         </div>
       
         <div class="categoria">
-        <img src="imagens/categoria1.png">
+        <div class='fas fa-clipboard' style='font-size:48px'></div>
         <h2>Categorias</h2>
         <ul class="b">
             <li><a href="cadastroCategoria.jsp">Cadastro</a></li>     
@@ -93,7 +98,7 @@
         </div>
 
         <div class="usuario">
-        <img src="imagens/usuario1.png">
+        <div class='fas fa-user' style='font-size:48px'></div>
         <h2>Usuário</h2>
         <ul class="b">   
             <li><a href="consultaUsuario.jsp">Consulta Meus Dados</a></li>
@@ -101,7 +106,7 @@
         </div>
         
         <div class="resumo">
-        <img src="imagens/resumo1.png">
+        <div class='fas fa-balance-scale' style='font-size:48px'></div>
         <h2>Resumo Financeiro</h2>
         <ul class="b">
             <li><a href="consultaBalancete.jsp"> Meu Saldo </a></li>

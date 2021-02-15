@@ -4,7 +4,6 @@
     Author     : User
 --%>
 
-<%@page import="utils.ConversorData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Modelos.Receita"%>
 <%@page import="java.util.List"%>
@@ -91,7 +90,7 @@
                             <td><%out.write(""+rs.getString("id"));%></td>
                             <td><%out.write(rs.getString("data"));%></td>
                             <td><%out.write(rs.getString("categoria"));%></td>
-                            <td><%out.write(ConversorData.formataMoeda(rs.getFloat("valor")));%></td>
+                            <td><%out.write(rs.getString("valor"));%></td>
                             <td><%out.write(rs.getString("descricao"));%></td>
                             <td><%out.write("<a href=editarReceita.jsp?id="+rs.getString("id")
                                 +"&idUser="+rs.getString("idusuario")+">Editar</a>");%></td>   
