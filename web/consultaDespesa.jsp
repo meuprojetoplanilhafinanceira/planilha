@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="utils.ConversorData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Modelos.Despesa"%>
 <%@page import="java.util.List"%>
@@ -89,7 +90,7 @@
                             <td><%out.write(""+rs.getString("id"));%></td>
                             <td><%out.write(rs.getString("data"));%></td>
                             <td><%out.write(rs.getString("categoria"));%></td>
-                            <td><%out.write(rs.getString("valor"));%></td>
+                            <td><%out.write(ConversorData.formataMoeda(rs.getFloat("valor")));%></td>
                             <td><%out.write(rs.getString("descricao"));%></td>
                             <td><%out.write("<a href=editarDespesa.jsp?id="+rs.getString("id")
                                 +"&idUser="+rs.getString("idusuario")+">Editar</a>");%></td>   
@@ -102,9 +103,9 @@
         </div>
                    
         
-     <footer>
-            <i><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
-    </footer>                
+   <div class="final">
+    <i><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
+</div>               
           
     </body>
     

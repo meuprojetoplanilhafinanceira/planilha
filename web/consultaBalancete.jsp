@@ -81,14 +81,16 @@
         <form action="consultaBalancete.jsp" method="POST">
             <div class="container3">
                 <label>Digite a Data Inicial</label>
-                <input type="date" name="dataInicio" />
+                <input style="width: 200px" type="date" name="dataInicio" />
                 <br>
 
                 <label>Digite a Data Final</label>
-                <input type="date" name="dataFim" />
+                <input style="width: 200px" type="date" name="dataFim" />
+                <br>
                 <br>
                 <input class="salvar" type="button" value="Consultar" onclick="enviaForm()" />
                 <br/>
+                <br>
                 <div>
                     <%
                         String inicio = request.getParameter("dataInicio");
@@ -105,9 +107,9 @@
                             valorDespesa = despesa.getTotalDespesa(idUser, dataInicio, dataFim);
                         }
                     %>
-                    <p class="ret12">Total Rendas: <span> <%out.write(ConversorData.formataMoeda(valorReceita));%> </span></p>
-                    <p class="ret13">Total Gastos: <%out.write(ConversorData.formataMoeda(valorDespesa));%> </p>
-                    <p class="ret14"> Saldo: <%out.write(ConversorData.formataMoeda(valorReceita - valorDespesa));%></p>                
+                    <p class="ret12">Total das Rendas:<br> <span> <%out.write(ConversorData.formataMoeda(valorReceita));%> </span></p>
+                    <p class="ret13">Total de Gastos:<br> <span><%out.write(ConversorData.formataMoeda(valorDespesa));%></span> </p>
+                    <p class="ret14"> Saldo: <span id="saldo"> <%out.write(ConversorData.formataMoeda(valorReceita - valorDespesa));%></span></p>                
                 </div>    
 
             </div>
@@ -123,6 +125,15 @@
                 } else
                     document.forms[0].submit();
             }
+            
+            var saldo = document.getElementById("saldo");
+            var valor = parseFloat(saldo.innerHTML);
+            if (valor < 0){
+                saldo.style="color:red";
+            }else{
+                saldo.style="color:blue";
+            }
+            
         </script>
         <footer>
             <i class="final"><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
