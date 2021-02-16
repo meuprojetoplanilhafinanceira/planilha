@@ -22,7 +22,7 @@
         </header>
     
         <div class="login">
-        <img src="imagens/avatar.jpg" style="width:76px">
+        <img src="imagens/avatar.jpg" style="width:66px">
         <h3> Olá... !!</h3>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
@@ -37,18 +37,18 @@
         <div class="clearfix">
         <div class="column">
         <ul>
-            <li><a href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+            <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
+            <li><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
+            <li><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
+            <li><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
+            <li><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
+            <li><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
+            <li><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
         </ul>
         </div>
+        </div>      
         </div>
-        </div>
-        
+         
         <script type="text/javascript">
             function fMasc(objeto, mascara) {
                 obj = objeto
@@ -170,11 +170,9 @@
             }
         </script>
     </head>
-    <body>
-  
-    <div class="container1"><h1>Cadastro de Usuarios</h1>
-        <div class="row">
-        <div class="col-25">
+    <body>  
+    <div class="cadcat"><h3>Cadastro de Usuarios</h3>
+        <div>
         <form action="recebeDadosUsuario.jsp" method="POST">
         <div class="row">
         <div class="col-25">            
@@ -266,78 +264,77 @@
         <div class="col-75">
         <input type="password" name="senha" required />
         </div>
-        </div>          
-        <div class="row">
+        </div>
+            <br>
             <input class="salvar" type="button" value="Enviar" onclick="enviarDados()" />
             <input class="cancelar" type="reset" value="Cancelar" />
         </div>
-        
         </form>
 
-                <script>
-                    function enviarDados() {
-                        var nome = document.getElementsByName("nome");
-                        if (nome[0].value === "") {
-                            nome[0].focus();
-                            alert("informe o Nome");
-                            exit();
-                        }
-                        var cpf = document.getElementsByName("cpf");
-                        var numsStr = cpf[0].value.replace(/[^0-9]/g, '');
-                        if (!testaCpf(numsStr)) {
-                            cpf[0].focus();
-                            alert("Cpf inválido!");
-                            exit();
-                        }
-                        var dataNascimento = document.getElementsByName("dataNascimento");
-                        if (dataNascimento[0].value === "") {
-                            dataNascimento[0].focus();
-                            alert("informe a Data de Nascimento");
-                            exit();
-                        }
-                        var cep = document.getElementsByName("cep");
-                        if (cep[0].value === "") {
-                            cep[0].focus();
-                            alert("informe o Cep");
-                            exit();
-                        }
-                        document.forms[0].submit();
-                    }
+        <script>
+            function enviarDados() {
+            var nome = document.getElementsByName("nome");
+            if (nome[0].value === "") {
+            nome[0].focus();
+            alert("informe o Nome");
+            exit();
+            }
+            var cpf = document.getElementsByName("cpf");
+            var numsStr = cpf[0].value.replace(/[^0-9]/g, '');
+            if (!testaCpf(numsStr)) {
+            cpf[0].focus();
+            alert("Cpf inválido!");
+            exit();
+            }
+            var dataNascimento = document.getElementsByName("dataNascimento");
+            if (dataNascimento[0].value === "") {
+            dataNascimento[0].focus();
+            alert("informe a Data de Nascimento");
+            exit();
+            }
+            var cep = document.getElementsByName("cep");
+            if (cep[0].value === "") {
+            cep[0].focus();
+            alert("informe o Cep");
+            exit();
+            }
+            document.forms[0].submit();
+            }
 
-                    function testaCpf(strCPF) {
-                        var Soma;
-                        var Resto;
-                        Soma = 0;
-                        if (strCPF == "00000000000")
-                            return false;
+            function testaCpf(strCPF) {
+            var Soma;
+            var Resto;
+            Soma = 0;
+            if (strCPF == "00000000000")
+            return false;
 
-                        for (i = 1; i <= 9; i++)
-                            Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-                        Resto = (Soma * 10) % 11;
+            for (i = 1; i <= 9; i++)
+            Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+            Resto = (Soma * 10) % 11;
 
-                        if ((Resto == 10) || (Resto == 11))
-                            Resto = 0;
-                        if (Resto != parseInt(strCPF.substring(9, 10)))
-                            return false;
+            if ((Resto == 10) || (Resto == 11))
+            Resto = 0;
+            if (Resto != parseInt(strCPF.substring(9, 10)))
+            return false;
 
-                        Soma = 0;
-                        for (i = 1; i <= 10; i++)
-                            Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-                        Resto = (Soma * 10) % 11;
+            Soma = 0;
+            for (i = 1; i <= 10; i++)
+            Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+            Resto = (Soma * 10) % 11;
 
-                        if ((Resto == 10) || (Resto == 11))
-                            Resto = 0;
-                        if (Resto != parseInt(strCPF.substring(10, 11)))
-                            return false;
-                        return true;
-                    }
-                </script>
+            if ((Resto == 10) || (Resto == 11))
+            Resto = 0;
+            if (Resto != parseInt(strCPF.substring(10, 11)))
+            return false;
+            return true;
+            }
+            </script>
+               
         </div>
-        </div>
-    </div>
-    
-        <footer>
-            <i class="final"><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
-        </footer>
+       
+        <div class="final">
+            <p> <strong>C</strong> - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech</p>
+        </div>  
+   
     </body>
 </html>

@@ -13,7 +13,7 @@ and open the template in the editor.
             height: 72px;
             left: 0px;
             top: 0px;
-            background: #000069;
+            background-color: RGBA( 25, 25, 112, 1 );
 
     }
 
@@ -24,7 +24,7 @@ and open the template in the editor.
             border-color: black;
             width: 70px;
             height: 60px;
-            left: 1450px;
+            left: 1150px;
             top: 8px;
             background: #99ccff;
             text-decoration: none;
@@ -48,7 +48,7 @@ and open the template in the editor.
             border-color: black;
             width: 90px;
             height: 60px;
-            left: 1330px;
+            left: 1000px;
             top: 8px;
             background: #99ccff;
             text-decoration: none;
@@ -63,7 +63,7 @@ and open the template in the editor.
             padding: 1px;
     }
     
-    a{
+    .link{
         color: black;
         text-decoration: none;
         
@@ -71,20 +71,17 @@ and open the template in the editor.
 
     .logo{
         position: absolute;
-        width: 1026px;
+        width: 900px;
         height: 70px;
-        left: 204px;
         top: 2px;
-        border-style: unset;
+       
     }
 
     .corpo{
         position: absolute;
         width: 100%;
-        height: 757px;
         left: 0px;
         top: 71px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
 
     }
 
@@ -93,114 +90,108 @@ and open the template in the editor.
         width: 510px;
         height: 455px;
         left: 72px;
-        top: 80px;
+        top: 60px;
         font-family: sans-serif;
         font-style: normal;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 30px;
-        line-height: 35px;
+        line-height: 36px;
         display: flex;
         align-items: center;
-        color: black;
+        color: white;
 
     }
-    .controle{
+    .control{
         position: absolute;
-        width: 83%;
-        height: 708px;
-        left: 268px;
+        width: 77%;
+        height: 608px;
+        left: 307px;
         top: 4px;
-        background: url(controle.png);
+      
     }
 
     .msg{
         position: absolute;
         width: 100%;
-        height: 660px;
         left: 0px;
-        top: 828px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
+        top: 730px;
 
     }
+    
     .txt2{
         position: absolute;
-        width: 30%;
+        width: 29%;
         height: 290px;
-        left: 560px;
-        top: 130px;
-        font-family: sans-serif;
+        left: 490px;
+        top: 100px;
+        font-family: serif;
         font-style: normal;
-        font-weight: bold;
-        font-size: 29px;
-        line-height: 35px;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 36px;
         display: flex;
         align-items: center;
         text-align: center;
-        color: black;
+        color:white;
 
     }
 
     .ret1{
         position: absolute;
-        width: 31%;
-        height: 540px;
-        left: 35px;
-        top: 70px;
+        width: 32%;
+        height: 410px;
+        left: 15px;
+        top: 30px;
         color: black;
         border: 3px solid black;
         border-radius: 50px;
-        border-style: outset;
+        border-style: hidden;
     }
 
     .ret2{
         position: absolute;
-        width: 31%;
-        height: 540px;
-        left: 1054px;
-        top: 70px;
+        width: 32%;
+        height: 410px;
+        left: 904px;
+        top: 30px;
         color: black;
         border: 3px solid black;
         border-radius: 50px;
-        border-style:outset;
+        border-style: hidden;
     }
 
     .sub1{
         position: absolute;
         width: 100%;
-        height: 492px;
         left: 0px;
-        top: 1488px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
-
+        top: 1220px;
+        
     }
 
     .proj{
         position: absolute;
-        width: 60%;
-        height: 345px;
-        left: 300px;
+        width: 70%;
+        height: 310px;
+        left: 200px;
         right: 30px;
-        top: 78px;
-        border: 3px solid black;
-        border-style: inset;
+        top: 50px;
+        border-style: ridge;
 
     }
 
     .sub2{
         position: absolute;
         width: 100%;
-        height: 800px;
         left: 0px;
-        top: 2000px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
-
+        top: 1650px;
+    
     }
 
     .ret3{
         position: absolute;
         width: 476px;
         height: 646px;
-        left: 985px;
+        left: 820px;
         top: 60px;
         border-style: ridge;
 
@@ -210,34 +201,27 @@ and open the template in the editor.
         position: absolute;
         width: 266px;
         height: 70px;
-        left: 224px;
-        top: 636px;
+        left: 240px;
+        top: 590px;
         background: lightskyblue;
         border-style: outset;
-    }
-
-    .txt3{
-        position: absolute;
-        left: 245px;
-        top: 632px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
-        font-size: 26px;
+        font-size: 24px;
         line-height: 30px;
-        display: flex;
         align-items: center;
         text-align: center;
         color: black;
-
+        padding: 14px;
     }
 
     .txt4{
         position: absolute;
         width: 585px;
         height: 147px;
-        left: 126px;
-        top: 20px;
+        left: 40px;
+        top: 40px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -246,7 +230,7 @@ and open the template in the editor.
         display: flex;
         align-items: center;
         text-align: left;
-        color: black;
+        color: white;
 
     }
 
@@ -254,22 +238,22 @@ and open the template in the editor.
         position: absolute;
         width: 543px;
         height: 91px;
-        left: 215px;
+        left: 140px;
         top: 227px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 22px;
-        line-height: 23px;
+        font-size: 20px;
+        line-height: 25px;
         display: flex;
         align-items: center;
         text-align: left;
-        color: black;
+        color:white;
 
     }
     .emoj1{
         position: absolute;
-        left: 127px;
+        left: 47px;
         top: 235px;
     }
 
@@ -277,22 +261,22 @@ and open the template in the editor.
         position: absolute;
         width: 543px;
         height: 91px;
-        left: 215px;
+        left: 140px;
         top: 337px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 22px;
-        line-height: 23px;
+        font-size: 20px;
+        line-height: 25px;
         display: flex;
         align-items: center;
         text-align: left;
-        color: black;
+        color:white;
 
     }
     .emoj2{
         position: absolute;
-        left: 127px;
+        left: 47px;
         top: 354px;
     }
 
@@ -300,32 +284,30 @@ and open the template in the editor.
         position: absolute;
         width: 543px;
         height: 91px;
-        left: 215px;
-        top: 447px;
+        left: 140px;
+        top: 449px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 22px;
-        line-height: 23px;
+        font-size: 20px;
+        line-height: 25px;
         display: flex;
         align-items: center;
         text-align: left;
-        color: black;
+        color:white;
 
     }
     .emoj3{
         position: absolute;
-        left: 127px;
+        left: 47px;
         top: 460px;
     }
 
     .ret5{
         position: absolute;
         width: 100%;
-        height: 700px;
-        left: 0px;
-        top: 2676px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
+        top: 2280px;
+       
 
     }
 
@@ -333,7 +315,7 @@ and open the template in the editor.
         position: absolute;
         width: 819px;
         height: 94px;
-        left: 330px;
+        left: 200px;
         top: 120px;
         font-family: sans-serif;
         font-style: normal;
@@ -343,7 +325,7 @@ and open the template in the editor.
         display: flex;
         align-items: center;
         text-align: center;
-        color: black;
+        color:white;
 
     }
 
@@ -351,10 +333,10 @@ and open the template in the editor.
         position: absolute;
         width: 296px;
         height: 243px;
-        left: 140px;
-        top: 370px;
+        left: 40px;
+        top: 320px;
         border-radius: 18px;    
-        border-style: ridge;
+        border-style: outset;
 
     }
 
@@ -362,10 +344,10 @@ and open the template in the editor.
         position: absolute;
         width: 296px;
         height: 243px;
-        left: 660px;
-        top: 370px;
+        left: 510px;
+        top: 320px;
         border-radius: 18px;    
-        border-style: ridge;
+        border-style: outset;
 
     }
 
@@ -373,17 +355,17 @@ and open the template in the editor.
         position: absolute;
         width: 296px;
         height: 243px;
-        left: 1140px;
-        top: 370px;
+        left: 990px;
+        top: 320px;
         border-radius: 18px;    
-        border-style: ridge;
+        border-style: outset;
 
     }
 
     .txt9{
         position: absolute;
-        left: 210px;
-        top: 600px;
+        left: 120px;
+        top: 560px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -398,8 +380,8 @@ and open the template in the editor.
 
     .txt10{
         position: absolute;
-        left: 700px;
-        top: 600px;
+        left: 540px;
+        top: 560px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -414,8 +396,8 @@ and open the template in the editor.
 
     .txt11{
         position: absolute;
-        left: 1230px;
-        top: 600px;
+        left: 1070px;
+        top: 560px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -431,19 +413,16 @@ and open the template in the editor.
     .ret9{
         position: absolute;
         width: 100%;
-        height: 700px;
-        left: 0px;
-        top: 3306px;
-        background-image: linear-gradient(to left, rgba(0,0,242,0), rgba(0,0,242,0));
-
+        top: 2850px;
+        height: 600px;
     }
 
     .ret10{
         position: absolute;
         width: 250px;
         height: 80px;
-        left: 1000px;
-        top: 220px;
+        left: 800px;
+        top: 170px;
         background-color: lightsalmon;
         border-style: ridge;
         font-family: serif;
@@ -458,8 +437,8 @@ and open the template in the editor.
         position: absolute;
         width: 250px;
         height: 80px;
-        left: 1000px;
-        top: 360px;
+        left: 800px;
+        top: 300px;
         background-color: gold;    
         border-style: ridge;
         font-family: serif;
@@ -520,8 +499,8 @@ and open the template in the editor.
     
     .txt12{
         position: absolute;
-        left: 400px;
-        top: 130px;
+        left: 150px;
+        top: 5px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -536,50 +515,50 @@ and open the template in the editor.
 
     .emoj4{
         position: absolute;
-        left: 360px;
-        height: 80px;
-        top: 253px;
+        left: 60px;
+        height: 70px;
+        top: 100px;
 
     }
 
     .emoj5{
         position: absolute;
-        left: 490px;
-        height: 80px;
-        top: 253px;
+        left: 180px;
+        height: 70px;
+        top: 100px;
 
     }
 
     .emoj6{
         position: absolute;
-        left: 620px;
-        height: 80px;
-        top: 253px;
+        left: 300px;
+        height: 70px;
+        top: 100px;
 
     }
 
 
     .emoj7{
         position: absolute;
-        left: 360px;
-        height: 80px;
-        top: 400px;
+        left: 60px;
+        height: 70px;
+        top: 200px;
 
     }
 
     .emoj8{
         position: absolute;
-        left: 490px;
-        height: 80px;
-        top: 400px;
+        left: 180px;
+        height: 70px;
+        top: 200px;
 
     }
 
     .emoj9{
         position: absolute;
-        left: 620px;
-        height: 80px;
-        top: 400px;
+        left: 300px;
+        height: 70px;
+        top: 200px;
 
     }
 
@@ -589,7 +568,7 @@ and open the template in the editor.
     .login {
         position: absolute;
         background-color: white;
-        padding: 9px;
+        padding: 7px;
         margin-top: 5px;
         margin-left: 0px;
         width: 210px;
@@ -607,7 +586,7 @@ and open the template in the editor.
         display: block;
         color: black;
         text-align: center;
-        padding: 3px 18px;
+        padding: 3px 13px;
         text-decoration: none;
         }
     
@@ -628,7 +607,7 @@ and open the template in the editor.
         width: 543px;
         height: 91px;
         left:8px;
-        top: 304px;
+        top: 244px;
         font-family: sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -646,7 +625,7 @@ and open the template in the editor.
         margin-top: 1px;
         margin-left: 0px;
         width: 300px;
-        top: 375px;
+        top: 305px;
         font-family: serif;
         font-style: normal;
         font-weight: 550;
@@ -656,7 +635,7 @@ and open the template in the editor.
         }
       
     .menu li {
-          padding: 6px;
+          padding: 3px;
           margin-bottom: 2px;
           background-color: #33b5e5;
           color: black;
@@ -753,22 +732,7 @@ and open the template in the editor.
         height: 200px;    
         }
     
-    .cadcat{
-        position: absolute;
-        background-color: aqua;
-        padding: 60px;
-        margin-top: 5px;
-        margin-left: 3px;
-        width: 800px;
-        top: 80px;
-        left: 430px;
-        height: 570px;
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: 550;
-        font-size: 18px;    
-        }
-
+    
     .button {
       background-color: gainsboro;
       color: black;
@@ -788,7 +752,7 @@ and open the template in the editor.
 
     input[type=text], [type=date], [type=password], [type=email], select, textarea {
       position: absolute;
-      width: 60%;
+      width: 50%;
       padding: 4px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -801,13 +765,13 @@ and open the template in the editor.
     }
 
     label {
-      padding: 8px 8px 8px 0;
+      padding: 5px 5px 5px 0;
       display: inline-block;
     }
 
     .col-25 {
       float: left;
-      width: 55%;
+      width: 40%;
       margin-top: 1px;
       font-family: sans-serif;
       font-style: normal;
@@ -817,7 +781,7 @@ and open the template in the editor.
 
     .col-75 {
       float: right;
-      width: 45%;
+      width: 30%;
       margin-top: 1px;
     }
 
@@ -900,7 +864,22 @@ and open the template in the editor.
         background-color: #B0E0E6;
         }
 
-  
+    .cadcat{
+        position: absolute;
+        background-color: aqua;
+        padding: 20px;
+        margin-top: 5px;
+        margin-left: 3px;
+        width: 800px;
+        top: 75px;
+        left: 280px;
+        height: 440px;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 18px;    
+        }
+
     .cadcat1{
         position: absolute;
         background-color: lightpink;
@@ -955,20 +934,18 @@ and open the template in the editor.
         }
     
     .final{
-        position: fixed;
-        background:  lightgray;
-        width: 100%;
-        height: 3%;
-       
-        bottom: 0px;
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
+        background-color: black;
+        color: white;
+        position: absolute;
+        bottom:0;
+        width:99%;
+        margin: auto auto;
         text-align: center;
-        color: black;
-
-    }
+        font-weight: 500;
+        left: 0;
+        max-height: 33px;
+    
+        }
     
     .container {
       position: absolute;
@@ -985,22 +962,22 @@ and open the template in the editor.
     .container1 {
       position: absolute;
       width: 80%;
-      left: 15%;
-      top: 10%;
-      height: 79%;
+      left: 17%;
+      top: 12%;
+      height: 77%;
       border-radius: 5px;
       background-color: bisque;
-      padding: 1px;
+      padding: 4px;
 
     }
     .container2 {
       position: absolute;
-      width: 25%;
-      left: 21%;
-      top: 33%;
-      height: 40%;
+      width: 450px;
+      left: 150px;
+      top: 150px;
+      height: 330px;
       border-radius: 30px;
-      background-color: thistle;
+      background-color: lightgoldenrodyellow;
       padding: 20px;
       border-style: ridge;
     }
