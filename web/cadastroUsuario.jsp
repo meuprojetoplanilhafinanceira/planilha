@@ -19,16 +19,14 @@
         </header>
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-        <h3> Olá... !!</h3>
+        <p> Olá... !!</p>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
             <a href="cadastroCategoriaDefault.jsp"><img src="imagens/configura.png"></i></a>
         </div>
         </div>
-        
         <div class="painel"> Painel de Controle </div><br>
-        
         <div class="menu">
         <div class="clearfix">
         <div class="column">
@@ -167,7 +165,7 @@
         </script>
     </head>
     <body>  
-    <div class="cadcat"><h3>Cadastro de Usuarios</h3>
+    <div class="cadcat"><p>Cadastro de Usuarios</p>
         <div>
         <form action="recebeDadosUsuario.jsp" method="POST">
         <div class="row">
@@ -180,7 +178,7 @@
         </div>
         <div class="row">
         <div class="col-25">
-        <label>Cpf</label>
+        <label>CPF</label>
         </div> 
         <div class="col-75">    
         <input type="text" name="cpf" onkeydown="javascript: fMasc(this, mCPF);" 
@@ -197,7 +195,7 @@
         </div>
         <div class="row">
         <div class="col-25">
-        <label>Fone</label>
+        <label>Telefone</label>
         </div> 
         <div class="col-75">
         <input type="text" name="fone" onkeydown="javascript: fMasc(this, mTel);" 

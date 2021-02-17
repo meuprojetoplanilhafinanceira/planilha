@@ -8,33 +8,27 @@
 <%@page import="Modelos.Usuario"%>
 <%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color:rgba(0, 0, 242, 0.1)">
+<html >
      <head>
         <title>Minha Agenda Financeira</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/estilos.css">
-        
+        <link rel="stylesheet" href="style/estilos.css">   
     </head>
-    <body>
-        
-        
+    <body style="background-color:rgba(0, 0, 242, 0.1)">   
         <header>
             <div class="logo"><img src="imagens/logo.png"></div>
         </header>
-    
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-        <h3> Olá... !!</h3>
+        <p> Olá... !!</p>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
             <a href="cadastroCategoriaDefault.jsp"><img src="imagens/configura.png"></i></a>
         </div>
         </div>
-        
         <div class="painel"> Painel de Controle </div><br>
-        
         <div class="menu">
         <div class="clearfix">
         <div class="column">
@@ -50,7 +44,6 @@
         </div>
         </div>      
         </div>
-
         <div class="cadcat1"><h1>Tela de Login</h1>
             <form action="login.jsp" method="POST">
             <br>
@@ -86,9 +79,8 @@
             }
         %>
         
-        <footer>
-            <i class="final"><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
-        </footer>
-        
+        <div class="final">
+            <p> <strong>C</strong> - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech</p>
+        </div>
     </body>
 </html>

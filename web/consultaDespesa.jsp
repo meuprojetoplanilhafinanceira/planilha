@@ -60,15 +60,14 @@
             }
         %>
        
-        <div class="container1"><h1>Consulta Despesas</h1>
+        <div class="container1"><p> Estes são os seus Gastos </p></div>
               
                 <%
                     Despesa despesa = new Despesa();
                     ResultSet rs = despesa.consultarInner(idUser);
                 %>
-                <table>
+                <table class="container6">
                     <thead>
-                    <th>Id</th>
                     <th>Data</th>
                     <th>Categoria</th>
                     <th>Valor</th>
@@ -79,7 +78,6 @@
                     <tbody>
                         <%while(rs.next()){%>
                         <tr>
-                            <td><%out.write(""+rs.getString("id"));%></td>
                             <td><%out.write(rs.getString("data"));%></td>
                             <td><%out.write(rs.getString("categoria"));%></td>
                             <td><%out.write(ConversorData.formataMoeda(rs.getFloat("valor")));%></td>

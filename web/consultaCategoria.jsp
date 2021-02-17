@@ -61,16 +61,14 @@
             }
         %>
         
-        <div class="container1"><h1>Consulta Categorias</h1>
+        <div class="container1"><p>Suas Categorias cadastradas</p></div>
                 
                 <%
                     Categoria categoria = new Categoria();
                     List<Categoria> categorias = categoria.consultar(idUser);
                 %>
-                <table>
+                <table class="container6">
                     <thead>
-                    <th>Id</th>
-                    <th>IdUsuario</th>
                     <th>Descricao</th>
                     <th>Tipo</th>
                     <th>Editar</th>
@@ -80,8 +78,6 @@
                     <tbody>
                         <% for (Categoria c : categorias) {%>
                         <tr>
-                            <td><% out.write("" + c.getId());%></td>
-                            <td><% out.write("" + c.getIdUsuario());%></td>
                             <td><% out.write(c.getDescricao());%></td>
                             <%if (c.getTipo().equals("R")) {%>
                             <td><%out.write(c.getTipo() + "ECEITA");%></td>

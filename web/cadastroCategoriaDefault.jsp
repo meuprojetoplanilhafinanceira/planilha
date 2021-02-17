@@ -6,23 +6,19 @@
 
 <%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color:rgba(0, 0, 242, 0.1)">
+<html>
      <head>
         <title>Minha Agenda Financeira</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/estilos.css">
-        
+        <link rel="stylesheet" href="style/estilos.css">   
     </head>
-    <body>
-        
-        
+    <body style="background-color:rgba(0, 0, 242, 0.1)">    
         <header>
             <div class="logo"><img src="imagens/logo.png"></div>
         </header>
-    
         <div class="login">
-        <img src="imagens/avatar.jpg" style="width:76px">
+        <img src="imagens/avatar.jpg" style="width:66px">
         <h3> Olá,
             <% 
               String nomeUser = (String) session.getAttribute("nome");
@@ -35,20 +31,18 @@
             <a href="cadastroCategoriaDefault.jsp"><img src="imagens/configura.png"></i></a>
         </div>
         </div>
-        
         <div class="painel"> Painel de Controle </div><br>
-        
         <div class="menu">
         <div class="clearfix">
         <div class="column">
         <ul>
-            <li><a href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+            <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
+            <li><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
+            <li><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
+            <li><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
+            <li><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
+            <li><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
+            <li><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
         </ul>
         </div>
         </div>
@@ -102,8 +96,8 @@
                 </script>
             </article>
         </section>
-        <footer>
-            <i class="final"><img src="imagens/icon-c.png" > - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech </i>
-        </footer>
+        <div class="final">
+        <p> <strong>C</strong> - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech</p>
+        </div>
     </body>
 </html>
