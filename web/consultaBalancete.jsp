@@ -20,7 +20,9 @@
         <title>Minha Agenda Financeira</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/estilos.css">   
+        <link rel="stylesheet" href="style/estilos.css"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body style="background-color:rgba(0, 0, 242, 0.1)">   
         <header>
@@ -66,8 +68,8 @@
                 idUser = (int) session.getAttribute("idUser");
             }
         %>   
-        <form action="consultaBalancete.jsp" method="POST">
-            <div class="container3">
+        <div class="container3"><h2 style="text-align: center">Balancete Detalhado</h2>
+                <form action="consultaBalancete.jsp" method="POST">
                 <label>Digite a Data Inicial</label>
                 <input style="width: 200px" type="date" name="dataInicio" />
                 <br>
@@ -95,12 +97,20 @@
                             valorDespesa = despesa.getTotalDespesa(idUser, dataInicio, dataFim);
                         }
                     %>
-                    <p class="ret12">Total das Rendas:<br> <span> <%out.write(ConversorData.formataMoeda(valorReceita));%> </span></p>
-                    <p class="ret13">Total de Gastos:<br> <span><%out.write(ConversorData.formataMoeda(valorDespesa));%></span> </p>
+                    <p class="ret12">Total das Rendas: <span> <%out.write(ConversorData.formataMoeda(valorReceita));%> </span></p>
+                    <p class="ret13">Total de Gastos: <span><%out.write(ConversorData.formataMoeda(valorDespesa));%></span> </p>
                     <p class="ret14"> Saldo: <span id="saldo"> <%out.write(ConversorData.formataMoeda(valorReceita - valorDespesa));%></span></p>                
+                    <input type="hidden" name="cat" value="Despesa %"/>
+                    <input type="hidden" name="vlr" value="<% out.write(String.valueOf(Math.round(valorDespesa * 100 / valorReceita))); %>"/>
+                    <input type="hidden" name="cat" value="Receita %"/>
+                    <input type="hidden" name="vlr" value="<% out.write(String.valueOf(Math.round(100 - (valorDespesa * 100 / valorReceita)))); %>"/>
                 </div>    
             </div>
-        </form>      
+        </form> 
+        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px;">
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <script src="scripts/grafico1.js"></script>
+        </div>
         <script>
             function enviaForm() {
                 var inicio = document.getElementsByName("dataInicio")[0].value;

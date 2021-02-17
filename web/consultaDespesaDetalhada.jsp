@@ -87,23 +87,23 @@
                     <%}%>
                 </select>
                 <br> 
-                <label>Agrupar?</label>
-                <input type="checkbox" name="agrupar" checked="true" />
+                <!--<label>Agrupar?</label>-->
+                <input type="hidden" name="agrupar" checked="true" />
                 <input class="consultar" type="button" value="Consultar"  onclick="enviaForm()"/>
+                
         </form>        
         </div>
             <%
                 Despesa despesa = new Despesa();
                 List<Despesa> despesas = new ArrayList<>();
-                //Integer idUser = (int) session.getAttribute("idUser");
-               // Integer idUser = 7;
+              
                 String filtrarByCategoria = request.getParameter("filtrarByCategoria");
                 String categoria = request.getParameter("categoria");
-                // String valor = request.getParameter("valor");
-                // String data = request.getParameter("data");
+                
                 String inicio = request.getParameter("dataInicio");
                 String fim = request.getParameter("dataFim");
                 String agrupar = request.getParameter("agrupar");
+                
                 if (inicio != null && fim != null) {
                     Date dataInicio = Date.valueOf(inicio);
                     Date dataFim = Date.valueOf(fim);
@@ -136,24 +136,31 @@
             
             <table class="container5">   
             <thead>
+            <% if (inicio != null) { %>
             <th>Descricao</th>
             <th>Valor</th>
-            <th>Data</th> 
+            <th>Data</th>
+             <%}%>
         </thead> 
         <tbody>
             <% for (Despesa d : despesas) {%>
             <tr>
                 <td><% out.write(d.getDescricao());%></td>
                 <td><% out.write(String.valueOf(ConversorData.formataMoeda(d.getValor())));%></td>
-                <td><% out.write(String.valueOf(d.getData()));%></td>        
+                <td><% 
+                        if (d.getData()== null)
+                           out.write("-");
+                        else           
+                           out.write(String.valueOf(d.getData()));
+                    %></td>           
                 <input type="hidden" name="cat" value="<% out.write(d.getDescricao()); %>"/>
                 <input type="hidden" name="vlr" value="<% out.write(String.valueOf(d.getValor())); %>"/>
             </tr>
             <%}%>
         </tbody>         
     </table>
-        <div class="col-6 chart" style="position: relative;">
-            <canvas id="myChart1" width="500" height="400"></canvas>
+            <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px;">
+            <canvas id="myChart1" width="400" height="400"></canvas>
             <script src="scripts/grafico1.js"></script>
         </div>
     <script>
@@ -174,7 +181,6 @@
                         document.forms[0].submit();
                     }
     </script>
-
     <div class="final">
         <p> <strong>C</strong> - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech</p>
     </div> 

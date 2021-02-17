@@ -152,7 +152,7 @@ public class Despesa {
      public List<Despesa> consultaLancamentosByIntervaloData(int idUser, Date dataInicio, Date dataFim, boolean agrupar) {
         Connection con = Conexao.conectar();
         List<Despesa> lista = new ArrayList<>();
-        String sql = "select despesa.descricao, despesa.data, ";
+     /*   String sql = "select despesa.descricao, despesa.data, ";
 
         if (agrupar) {
             sql += " sum(despesa.valor) as valor ";
@@ -167,7 +167,25 @@ public class Despesa {
             sql += " group by despesa.descricao, despesa.data ";
         }
         sql += " order by despesa.descricao";
+*/
+        String sql = "select cat.descricao, ";
 
+        if (agrupar) {
+            sql += " sum(despesa.valor) as valor ";
+        } else {
+            sql += " despesa.valor   ";
+        }
+
+        sql += " from despesa, categoria cat ";
+        sql += " where despesa.idcategoria = cat.id ";
+        sql += " and despesa.idusuario = ?";
+        sql += " and despesa.data between ? and ? ";
+       // sql += " and despesa.idcategoria = ?";
+        if (agrupar) {
+            sql += " group by cat.descricao";
+        }
+        sql += " order by cat.descricao";
+     
         Despesa despesa = null;
         try {
             PreparedStatement stm = con.prepareStatement(sql);
@@ -179,7 +197,7 @@ public class Despesa {
                 despesa = new Despesa();
                 despesa.setDescricao(rs.getString("descricao"));
                 despesa.setValor(rs.getFloat("valor"));
-                despesa.setData(rs.getDate("data"));
+                //despesa.setData(rs.getDate("data"));
                 lista.add(despesa);
             }
 
@@ -208,7 +226,7 @@ public class Despesa {
             sql += " group by despesa.descricao, despesa.data ";
         }
         sql += " order by despesa.descricao";
-
+        
         Despesa despesa = null;
         try {
             PreparedStatement stm = con.prepareStatement(sql);

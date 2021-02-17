@@ -58,23 +58,21 @@
         </div>
 
         <%
-            int idUser = 0;
             //verifica sessão
             String usuario = (String) session.getAttribute("usuario");
+            int idUser = (int) session.getAttribute("idUser");
             if (usuario == null) {
                 response.sendRedirect("login.jsp");
-            } else {
-                idUser = (int) session.getAttribute("idUser");
             }
         %>   
         
         <div class="container4"><h2 style="text-align: center">Consulta Renda Detalhada</h2>
         <form action="consultaReceitaDetalhada.jsp" method="POST">        
                 <label>Digite a Data Inicial</label>
-                <input style="width: 50%" type="date" name="dataInicio" />
+                <input style="width: 40%" type="date" name="dataInicio" />
                 <br>
                 <label>Digite a Data Final</label>
-                <input style="width: 50%" type="date" name="dataFim" />
+                <input style="width: 40%" type="date" name="dataFim" />
                 <br>
                 <%
                     Categoria cat = new Categoria();
@@ -82,16 +80,15 @@
                 %>
 
                 <input type="checkbox" name="filtrarByCategoria"> Filtrar por categoria?</input>
-                <select style="width: 50%" name="categoria">
+                <select style="width: 40%" name="categoria">
                     <%for (Categoria ct : categorias) { %>
                     <option value=<%out.write("" + ct.getId());%>><%out.write(ct.getDescricao());%></option>
                     <%}%>
                 </select>
                 <br>              
-                <label>Agrupar?</label>
-                <input type="checkbox" name="agrupar" checked="true" />               
+                <!--<label>Agrupar?</label>-->
+                <input type="hidden" name="agrupar" checked="true" />               
                 <input class="consultar" type="button" value="Consultar"  onclick="enviaForm()"/>
-                <br/>
         </form>
         </div>
 
@@ -138,22 +135,33 @@
             %>
             <table class="container5"> 
             <thead>
+            <% if (inicio != null) { %>
             <th>Descricao</th>
             <th>Valor</th>
-            <th>Data</th> 
+            <th>Data</th>
+            <%}%>
         </thead> 
         <tbody>
             <% for (Receita r : receitas) {%>
-
             <tr>
                 <td><% out.write(r.getDescricao());%></td>
                 <td><% out.write(ConversorData.formataMoeda(r.getValor()));%></td>
-                <td><% out.write(String.valueOf(r.getData()));%></td>        
+                <td><% 
+                        if (r.getData() == null)
+                           out.write("-");
+                        else           
+                           out.write(String.valueOf(r.getData()));
+                    %></td> 
+                <input type="hidden" name="cat" value="<% out.write(r.getDescricao()); %>"/>
+                <input type="hidden" name="vlr" value="<% out.write(String.valueOf(r.getValor())); %>"/>
             </tr>
             <%}%>
         </tbody>           
     </table>
-        
+        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px;">
+            <canvas id="myChart1" width="400" height="400"></canvas>
+            <script src="scripts/grafico1.js"></script>
+        </div>    
 <script>
                     function enviaForm() {
                         debugger;
@@ -172,10 +180,6 @@
                         document.forms[0].submit();
                     }
     </script>
-    <div class="col-6 chart" style="position: relative;">
-            <canvas id="myChart1" width="500" height="400"></canvas>
-            <script src="scripts/grafico1.js"></script>
-    </div>
     <div class="final">
         <p> <strong>C</strong> - 2021 - Desenvolvido nas aulas de Java da Turma Maturitech</p>
     </div>  

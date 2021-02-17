@@ -153,7 +153,7 @@ public class Receita {
    public List<Receita> consultaLancamentosByIntervaloData(int idUser, Date dataInicio, Date dataFim, boolean agrupar) {
         Connection con = Conexao.conectar();
         List<Receita> lista = new ArrayList<>();
-        String sql = "select receita.descricao, receita.data, ";
+        /*String sql = "select receita.descricao, receita.data, ";
 
         if (agrupar) {
             sql += " sum(receita.valor) as valor ";
@@ -168,7 +168,25 @@ public class Receita {
             sql += " group by receita.descricao, receita.data ";
         }
         sql += " order by receita.descricao";
+        */
+        String sql = "select cat.descricao, ";
 
+        if (agrupar) {
+            sql += " sum(receita.valor) as valor ";
+        } else {
+            sql += " receita.valor   ";
+        }
+
+        sql += " from receita, categoria cat ";
+        sql += " where receita.idcategoria = cat.id ";
+        sql += " and receita.idusuario = ?";
+        sql += " and receita.data between ? and ? ";
+       // sql += " and receita.idcategoria = ?";
+        if (agrupar) {
+            sql += " group by cat.descricao";
+        }
+        sql += " order by cat.descricao";
+     
         Receita receita = null;
         try {
             PreparedStatement stm = con.prepareStatement(sql);
@@ -180,7 +198,7 @@ public class Receita {
                 receita = new Receita();
                 receita.setDescricao(rs.getString("descricao"));
                 receita.setValor(rs.getFloat("valor"));
-                receita.setData(rs.getDate("data"));
+                //receita.setData(rs.getDate("data"));
                 lista.add(receita);
             }
 
