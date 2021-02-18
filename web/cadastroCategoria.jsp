@@ -19,12 +19,24 @@
         </header>
         <div class="login">
             <img src="imagens/avatar.jpg" style="width:66px">
-            <p> Olá,
+             <%
+                //verifica sessão
+                int idUser = 0;
+                String nomeUser = "";
+                String usuario = (String) session.getAttribute("usuario");
+
+                if (usuario == null) {
+                    response.sendRedirect("login.jsp");
+                } else {
+                    idUser = (int) session.getAttribute("idUser");
+                    nomeUser = (String) session.getAttribute("nome");
+                }
+            %>
+            <h3> Olá,
                 <%
-                    String nomeUser = (String) session.getAttribute("nome");
                     out.write(nomeUser);
                 %> !!
-            </p>
+            </h3>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
@@ -48,20 +60,12 @@
         </div>
         </div>
         <%
-         //verifica sessão
-        int idUser = 0;
-        String usuario = (String) session.getAttribute("usuario");
-        if (usuario == null) {
-        response.sendRedirect("login.jsp");
-        } else {
-        idUser = (int) session.getAttribute("idUser");
-        }
-
-        String msg = "";
-        if (request.getParameter("msg") != null) {
-        msg = request.getParameter("msg");
-        }
+            String msg = "";
+            if (request.getParameter("msg") !=null){
+                msg= request.getParameter("msg");
+            }
         %>
+        
         <div class="cadcat"><h2 style="text-align: center"> Cadastro da Nova Categoria </h2>
             <form action="recebeDadosCategoria.jsp" method="POST"><br>
         <label>Informe a descrição</label>
@@ -75,8 +79,7 @@
             </select>
             <br>
             <br>     
-        <label><%out.write(msg);%></label>              
-            <br>
+                     
             <input class="salvar" type="button" value="Salvar" onclick="enviaForm()" />
             <input class="cancelar" type="reset" value="Cancelar" onclick="enviaForm()" />
         </form>

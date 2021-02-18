@@ -21,12 +21,24 @@
         </header>
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-        <p> Olá,
-            <% 
-              String nomeUser = (String) session.getAttribute("nome");
-              out.write(nomeUser);
-            %> !!
-        </p>
+         <%
+                //verifica sessão
+                int idUser = 0;
+                String nomeUser = "";
+                String usuario = (String) session.getAttribute("usuario");
+
+                if (usuario == null) {
+                    response.sendRedirect("login.jsp");
+                } else {
+                    idUser = (int) session.getAttribute("idUser");
+                    nomeUser = (String) session.getAttribute("nome");
+                }
+            %>
+            <h3> Olá,
+                <%
+                    out.write(nomeUser);
+                %> !!
+            </h3>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
@@ -49,17 +61,7 @@
         </div>
         </div>
         </div>
-        <%
-            //verifica sessão
-            int idUser = 0;
-            String usuario = (String) session.getAttribute("usuario");
-            if (usuario == null) {
-                response.sendRedirect("login.jsp");
-            } else {
-                idUser = (int) session.getAttribute("idUser");
-            }
-        %>
-        
+       
         <div class="container1"><p>Estes são os Meus Dados</p></div>
         
         <%

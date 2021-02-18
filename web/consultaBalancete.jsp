@@ -30,12 +30,24 @@
         </header>
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-        <p> Olá,
-            <% 
-              String nomeUser = (String) session.getAttribute("nome");
-              out.write(nomeUser);
-            %> !!
-        </p>
+         <%
+                //verifica sessão
+                int idUser = 0;
+                String nomeUser = "";
+                String usuario = (String) session.getAttribute("usuario");
+
+                if (usuario == null) {
+                    response.sendRedirect("login.jsp");
+                } else {
+                    idUser = (int) session.getAttribute("idUser");
+                    nomeUser = (String) session.getAttribute("nome");
+                }
+            %>
+            <h5> Olá,
+                <%
+                    out.write(nomeUser);
+                %> !!
+            </h5>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
@@ -58,16 +70,7 @@
         </div>
         </div>
         </div>
-            <%
-            int idUser = 0;
-            //verifica sessão
-            String usuario = (String) session.getAttribute("usuario");
-            if (usuario == null) {
-                response.sendRedirect("login.jsp");
-            } else {
-                idUser = (int) session.getAttribute("idUser");
-            }
-        %>   
+           
         <div class="container3"><h2 style="text-align: center">Balancete Detalhado</h2><br>
                 <form action="consultaBalancete.jsp" method="POST">
                 <label>Digite a Data Inicial</label>
@@ -107,9 +110,9 @@
                 </div>    
             </div>
         </form> 
-        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px; font-style: bold">
-            <canvas id="myChart1" width="400" height="400"></canvas>
-            <script src="scripts/grafico1.js"></script>
+        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px ">
+            <canvas id="myChart3" width="400" height="400"></canvas>
+            <script src="scripts/grafico3.js"></script>
         </div>
         <script>
             function enviaForm() {

@@ -68,11 +68,16 @@
         <div>
             <form action="recebeEditaReceita.jsp" method="POST">
                 <input type="hidden" name="id" value="<%out.write(""+receita.getId());%>">
-                <input type="hidden" name="idUser" value="<%out.write(""+receita.getIdUsuario());%>">
-            
                 <label>Informe a categoria</label>
-                <select name="idCategoria"><% for (Categoria c : categorias) { %>
-                    <option value="<%out.write("" + c.getId());%>"><%out.write(c.getDescricao());%></option>
+                <select name="idCategoria">
+                    <% for (Categoria c : categorias) { %>
+                        <% if (c.getId() == receita.getIdCategoria()) {%>
+                            <option selected value="<%out.write("" + c.getId());%>">
+                                <%out.write(c.getDescricao());%></option>
+                        <% } else { %>
+                            <option value="<%out.write("" + c.getId());%>">
+                                <%out.write(c.getDescricao());%></option>
+                        <%}%>
                     <%}%>
                 </select>
                 <br>
