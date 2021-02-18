@@ -18,13 +18,15 @@ if (cat.length > 1) {
             labels: labelsX,
             datasets: [{
                     data: dataX,
-                    backgroundColor: colorsX
+                    backgroundColor: colorsX,
+                
                 }]
         },
         options: {
             title: {
-                text: "Análise finaceira detalhada",
-                display: true
+                text: "Analise financeira detalhada",
+                display: true,
+                fontSize: 27
             }
         }
     });

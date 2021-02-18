@@ -7,7 +7,7 @@
 <%@page import="Modelos.CategoriaDefault"%>
 <%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color:rgba(0, 0, 242, 0.1)">
+<html style="background-color:rgba(255,160,122)">
      <head>
         <title>Minha Agenda Financeira</title>
         <meta charset="UTF-8">

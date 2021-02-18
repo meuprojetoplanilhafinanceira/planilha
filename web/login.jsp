@@ -44,7 +44,7 @@
         </div>
         </div>      
         </div>
-        <div class="cadcat1"><h1>Tela de Login</h1>
+        <div class="cadcat1"><h1 style="text-align: center">Tela de Login</h1>
             <form action="login.jsp" method="POST">
             <br>
             <br>

@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/estilos.css"> 
     </head>
-    <body style="background-color:rgba(0, 0, 242, 0.1)">
+    <body style="background-color: rgba(211,211,211)">
         <header>
             <div class="logo"><img src="imagens/logo.png"></div>
         </header>
@@ -38,13 +38,13 @@
         <div class="clearfix">
         <div class="column">
         <ul>
-            <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+           <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
+           <li style="background-color: rgba(211,211,211)"><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
+           <li style="background-color: rgba(173,216,230)"><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
+           <li style="background-color: rgba(127,255,212)"><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
+           <li style="background-color: rgba(245,222,179)"><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
+           <li style="background-color: rgba(240,248,255)"><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
+           <li style="background-color: rgba(255,160,122)"><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
         </ul>
         </div>
         </div>
@@ -59,7 +59,7 @@
                 idUser = (int) session.getAttribute("idUser");
             }
         %>
-        <div class="cadcat"><h1>Cadastro da Novo Gasto</h1>
+        <div class="cadcat"><h2 style="text-align: center">Cadastro do Novo Gasto</h2>
         <%
             Categoria categoria = new Categoria();
             List<Categoria> categorias = categoria.consultar(idUser, "D");  //consulta as categorias tipo=DESPESA
@@ -72,17 +72,17 @@
                     <%}%>
                 </select> 
                 <br />
-                <br>
+               
                 <label>Informe a descrição</label>
                 <input type="text" name="descricao" /> 
 
                 <br />
                 <label>Informe o valor</label>
-                <input style="width: 30%; padding: 4px" type="text" name="valor" />
+                <input style="width: 30%" type="text" name="valor" />
 
                 <br />
                 <label>Informe a data</label>
-                <input style="width: 30%; padding: 5px" type="date" name="data" />
+                <input style="width: 30%" type="date" name="data" />
                 <br>
                 <br />
                 <input class="salvar" type="button" value="Salvar" onclick="enviaForm()" />

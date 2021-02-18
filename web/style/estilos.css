@@ -64,9 +64,8 @@ header {
 }
 
 .link{
-    color: black;
     text-decoration: none;
-
+    color: #000033
 }
 
 .logo{
@@ -79,10 +78,9 @@ header {
 
 .corpo{
     position: absolute;
-    width: 100%;
     left: 0px;
     top: 71px;
-
+    width: 1306px;
 }
 
 .txt1{
@@ -103,7 +101,7 @@ header {
 }
 .control{
     position: absolute;
-    width: 77%;
+    width: 81%;
     height: 608px;
     left: 307px;
     top: 4px;
@@ -571,13 +569,13 @@ header {
     padding: 5px;
     margin-top: 1px;
     margin-left: 0px;
-    width: 210px;
+    width: 220px;
     top: 73px;
     font-family: serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-
+    border-style: outset;
 }
 
 /* Defina o estilo dos links topnav */
@@ -606,11 +604,11 @@ header {
     position: absolute;
     width: 543px;
     height: 91px;
-    left:8px;
+    left:11px;
     top: 240px;
     font-family: sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 22px;
     line-height: 36px;
     display: flex;
@@ -624,21 +622,21 @@ header {
     padding: 1px;
     margin-top: 1px;
     margin-left: 0px;
-    width: 300px;
+    
     top: 305px;
     font-family: serif;
     font-style: normal;
     font-weight: 500;
     font-size: 19px;
     text-align: left;
-
+    border-style: outset;
 }
 
 .menu li {
     padding: 5px;
     margin-bottom: 2px;
     background-color: #33b5e5;
-    color: black;
+    color: #000033;
 
 }
 
@@ -646,7 +644,7 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 2px;
-
+    color: #000033;
 }
 
 .clearfix::after {
@@ -674,7 +672,7 @@ ul.b {
 
 .gasto{
     position: absolute;
-    background-color: gold;
+    background-color: rgba(211,211,211);
     padding: 22px;
     margin-top: 5px;
     margin-left: 3px;
@@ -686,11 +684,12 @@ ul.b {
     font-weight: 500;
     font-size: 19px;
     line-height: 25px;
+    border-style: outset;
 }
 
 .renda{
     position: absolute;
-    background-color: coral;
+    background-color: rgba(173,216,230);
     padding: 22px;
     margin-top: 5px;
     margin-left: 3px;
@@ -702,11 +701,12 @@ ul.b {
     font-weight: 500;
     font-size: 19px;
     line-height: 25px;
+    border-style: outset;
 }
 
 .categoria{
     position: absolute;
-    background-color: goldenrod;
+    background-color: rgba(127,255,212);
     padding: 33px;
     margin-top: 5px;
     margin-left: 3px;
@@ -718,11 +718,12 @@ ul.b {
     font-weight: 500;
     font-size: 19px;
     line-height: 25px;
+    border-style: outset;
 }
 
 .usuario{
     position: absolute;
-    background-color: orange;
+    background-color: rgba(240,248,255);
     padding: 20px;
     margin-top: 5px;
     margin-left: 3px;
@@ -734,11 +735,12 @@ ul.b {
     font-weight: 500;
     font-size: 18px;
     line-height: 25px;
+    border-style: outset;
 }
 
 .resumo{
     position: absolute;
-    background-color: sandybrown;
+    background-color: rgba(245,222,179);
     padding: 20px;
     margin-top: 5px;
     margin-left: 3px;
@@ -751,6 +753,7 @@ ul.b {
     font-weight: 500;
     font-size: 18px;
     line-height: 25px;
+    border-style: outset;
 }
 
 
@@ -774,7 +777,7 @@ ul.b {
 input[type=text], [type=date], [type=password], [type=email], select, textarea {
     position: absolute;
     width: 50%;
-    padding: 4px;
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
@@ -790,7 +793,7 @@ input:focus {
 }
 
 label {
-    padding: 5px;
+    padding: 14px;
     display: inline-block;
 }
 
@@ -835,7 +838,23 @@ label {
     left: 65%;
 
 }
+.alterar {
+    position: absolute;
+    background-color: gainsboro;
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 20px;
+    margin: 4px 4px;
+    cursor: pointer;
+    border: 2px solid black;
+    left: 85%;
+    top: 540px;
+    width: 130px;
 
+}
 .consultar {
     position: absolute;
     background-color: gainsboro;
@@ -892,14 +911,14 @@ tr:nth-child(even) {
 
 .cadcat{
     position: absolute;
-    background-color: goldenrod;
+    background-color: transparent;
     padding: 18px;
     margin-top: 5px;
     margin-left: 3px;
     width: 800px;
     top: 75px;
     left: 280px;
-    height: 450px;
+    height: 650px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 550;
@@ -908,7 +927,7 @@ tr:nth-child(even) {
 
 .cadcat1{
     position: absolute;
-    background-color: lightsalmon;
+    background-color: transparent;
     padding: 40px;
     margin-top: 5px;
     margin-left: 3px;
@@ -940,16 +959,16 @@ tr:nth-child(even) {
 
 .cadcat3{
     position: absolute;
-    background-color: lightsalmon;
-    padding: 7px;
+    background-color: transparent;
+    padding: 1px;
     width: 820px;
-    top: 75px;
+    top: 70px;
     left: 330px;
     height: 530px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 21px;    
+    font-size: 17px;    
 }
 
 .letra{
@@ -992,12 +1011,13 @@ tr:nth-child(even) {
     top: 11%;
     height: auto;
     border-radius: 5px;
-    background-color: bisque;
+    background-color: transparent;
     font-family: sans-serif;
     font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
+    font-weight: 550;
+    font-size: 32px;
     text-align: center;
+    color: darkblue;
 }
 .container2 {
     position: absolute;
@@ -1018,9 +1038,9 @@ tr:nth-child(even) {
     top: 12%;
     height: 70%;
     border-radius: 30px;
-    background-color: bisque;
+    background-color: transparent;
     padding: 10px;
-    border-style: ridge;
+    border-style: hidden;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -1030,25 +1050,25 @@ tr:nth-child(even) {
 .container4 {
     position: absolute;
     width: 44%;
-    left: 15%;
-    top: 10%;
+    left: 17%;
+    top: 12%;
     height: 34%;
     border-radius: 5px;
-    background-color: bisque;
-    padding: 5px;
-    border-style: groove;
+    background-color: transparent;
+    padding: 8px;
+    border-style:  hidden;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .container5 {
     position: absolute;
     width: 44%;
-    left: 15%;
+    left: 17%;
     border-radius: 5px;
-    background-color: bisque;
+    background-color: whitesmoke;
     padding: 15px;
     top: 320px;
     border-style: groove;
@@ -1056,10 +1076,10 @@ tr:nth-child(even) {
 
 .container6 {
     position: absolute;
-    width: 74%;
-    left: 15%;
+    width: 70%;
+    left: 18%;
     border-radius: 5px;
-    background-color: bisque;
+    background-color: whitesmoke;
     padding: 15px;
     top: 168px;
     border-style: groove;

@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
-    <body style="background-color:rgba(0, 0, 242, 0.1)">   
+    <body style="background-color:rgba(245,222,179)">   
         <header>
             <div class="logo"><img src="imagens/logo.png"></div>
         </header>
@@ -35,7 +35,7 @@
               String nomeUser = (String) session.getAttribute("nome");
               out.write(nomeUser);
             %> !!
-        <p>
+        </p>
         <div class="topnav a">
             <a href="#"><img src="imagens/envelope.png"></i> </a>
             <a href="login.jsp"><img src="imagens/usuario.png"></i></a>
@@ -48,12 +48,12 @@
         <div class="column">
         <ul>
             <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+           <li style="background-color: rgba(211,211,211)"><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
+           <li style="background-color: rgba(173,216,230)"><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
+           <li style="background-color: rgba(127,255,212)"><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
+           <li style="background-color: rgba(245,222,179)"><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
+           <li style="background-color: rgba(240,248,255)"><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
+           <li style="background-color: rgba(255,160,122)"><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
         </ul>
         </div>
         </div>
@@ -68,17 +68,17 @@
                 idUser = (int) session.getAttribute("idUser");
             }
         %>   
-        <div class="container3"><h2 style="text-align: center">Balancete Detalhado</h2>
+        <div class="container3"><h2 style="text-align: center">Balancete Detalhado</h2><br>
                 <form action="consultaBalancete.jsp" method="POST">
                 <label>Digite a Data Inicial</label>
                 <input style="width: 200px" type="date" name="dataInicio" />
                 <br>
-
+               
                 <label>Digite a Data Final</label>
                 <input style="width: 200px" type="date" name="dataFim" />
                 <br>
                 <br>
-                <input class="salvar" type="button" value="Consultar" onclick="enviaForm()" />
+                <input class="consultar" type="button" value="Consultar" onclick="enviaForm()" />
                 <br/>
                 <br>
                 <div>
@@ -107,7 +107,7 @@
                 </div>    
             </div>
         </form> 
-        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px;">
+        <div class="col-4 chart" style="position: absolute; left: 890px; top: 100px; font-style: bold">
             <canvas id="myChart1" width="400" height="400"></canvas>
             <script src="scripts/grafico1.js"></script>
         </div>

@@ -21,7 +21,10 @@
     despesa.setIdUsuario(idUser);
     despesa.setIdCategoria(Integer.parseInt(request.getParameter("idCategoria")));
     despesa.setDescricao(request.getParameter("descricao"));
-    despesa.setValor(Float.parseFloat(request.getParameter("valor")));
+    String valor = request.getParameter("valor");
+    valor = valor.replace(".", "");
+    valor = valor.replace(',', '.');
+    despesa.setValor(Float.parseFloat(valor));
     despesa.setData(Date.valueOf(request.getParameter("data")));
 
     String msg = "";
@@ -30,5 +33,6 @@
     } else {
         msg = "Problemas ao alterar Despesa!";
     }
+    //response.sendRedirect("informacao.jsp?msg=" + msg);
     response.sendRedirect("informacao.jsp?msg=" + msg);
 %>

@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/estilos.css">       
     </head>
-    <body style="background-color:rgba(0, 0, 242, 0.1)">
+    <body style="background-color:rgba(127,255,212)">
       <header>
             <div class="logo"><img src="imagens/logo.png"></div>
         </header>

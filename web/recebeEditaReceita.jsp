@@ -21,7 +21,10 @@
     receita.setIdUsuario(idUser);
     receita.setIdCategoria(Integer.parseInt(request.getParameter("idCategoria")));
     receita.setDescricao(request.getParameter("descricao"));
-    receita.setValor(Float.parseFloat(request.getParameter("valor")));
+    String valor = request.getParameter("valor");
+    valor = valor.replace(".", "");
+    valor = valor.replace(',', '.');
+    receita.setValor(Float.parseFloat(valor));
     receita.setData(Date.valueOf(request.getParameter("data")));
 
     String msg = "";
