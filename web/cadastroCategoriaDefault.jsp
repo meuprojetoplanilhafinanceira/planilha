@@ -19,22 +19,10 @@
         </header>
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-         <%
-                //verifica sessão
-                int idUser = 0;
-                String nomeUser = "";
-                String usuario = (String) session.getAttribute("usuario");
-
-                if (usuario == null) {
-                    response.sendRedirect("login.jsp");
-                } else {
-                    idUser = (int) session.getAttribute("idUser");
-                    nomeUser = (String) session.getAttribute("nome");
-                }
-            %>
             <h3> Olá,
-                <%
-                    out.write(nomeUser);
+               <%
+                  String nomeUser = (String) session.getAttribute("nome");
+                  out.write(nomeUser);
                 %> !!
             </h3>
         <div class="topnav a">
@@ -59,7 +47,15 @@
         </div>
         </div>
         </div>
-        
+         <% 
+        String usuarioEsperado = "entra21";
+        String usuario = (String)session.getAttribute("usuario");
+        if (usuario == null){
+            response.sendRedirect("loginDefault.jsp");
+        }else if (!usuario.contains(usuarioEsperado)){
+            response.sendRedirect("index.html");
+        }
+        %>
         
         <div class="cadcat"><h2>Cadastro de Categorias (Padrão/inicial)</h2>
                 

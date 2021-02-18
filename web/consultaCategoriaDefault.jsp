@@ -21,22 +21,10 @@
         </header>
         <div class="login">
         <img src="imagens/avatar.jpg" style="width:66px">
-         <%
-                //verifica sessão
-                int idUser = 0;
-                String nomeUser = "";
-                String usuario = (String) session.getAttribute("usuario");
-
-                if (usuario == null) {
-                    response.sendRedirect("login.jsp");
-                } else {
-                    idUser = (int) session.getAttribute("idUser");
-                    nomeUser = (String) session.getAttribute("nome");
-                }
-            %>
             <h3> Olá,
                 <%
-                    out.write(nomeUser);
+                  String nomeUser = (String) session.getAttribute("nome");
+                  out.write(nomeUser);
                 %> !!
             </h3>
         <div class="topnav a">
@@ -51,19 +39,27 @@
         <div class="column">
         <ul>
             <li><a class="link" href="menu.jsp" ><img src="imagens/menu.png" hspace="4">  MENU </a></li>
-            <li><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
-            <li><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
-            <li><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
-            <li><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
-            <li><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
-            <li><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
+           <li style="background-color: rgba(211,211,211)"><a class="link" href="cadastroDespesa.jsp"><img src="imagens/gasto.png" hspace="3">  Seu novo Gasto</a> </li>
+           <li style="background-color: rgba(173,216,230)"><a class="link" href="cadastroReceita.jsp"><img src="imagens/renda.png" hspace="3">  Sua nova Renda</a></li>
+           <li style="background-color: rgba(127,255,212)"><a class="link" href="cadastroCategoria.jsp"><img src="imagens/categoria.png" hspace="3">   Crie nova Categoria</a></li>
+           <li style="background-color: rgba(245,222,179)"><a class="link" href="consultaBalancete.jsp"><img src="imagens/resumo.png" hspace="3">  Resumo Financeiro</a></li>
+           <li style="background-color: rgba(240,248,255)"><a class="link" href="consultaUsuario.jsp"><img src="imagens/usuario.png" hspace="3">  Meus Dados</a></li>
+           <li style="background-color: rgba(255,160,122)"><a class="link" href="consultaCategoriaDefault.jsp"><img src="imagens/configura.png" hspace="3">  Configurações</a></li>
         </ul>
         </div>
         </div>
         </div>
+        <% 
+        String usuarioEsperado = "entra21";
+        String usuario = (String)session.getAttribute("usuario");
+        if (usuario == null){
+            response.sendRedirect("loginDefault.jsp");
+        }else if (!usuario.contains(usuarioEsperado)){
+            response.sendRedirect("index.html");
+        }
+        %>
         
-        
-        <div class="container1"><h1>Consulta Categorias (Padrões na inicialização do Usuario)</h1>
+        <div class="container1"><p>Consulta Categorias (Padrões na inicialização do Usuario)</p>
 
                 <%
                     CategoriaDefault categoriaDefault = new CategoriaDefault();
@@ -97,7 +93,7 @@
                         <%}%>
                     </tbody>
                 </table>
-                    <p class="novo"><a href="cadastroCategoriaDefault.jsp">Clique <strong>aqui</strong> para 
+                    <p class="aqui"><a href="cadastroCategoriaDefault.jsp">Clique <strong>aqui</strong> para 
                         Incluir uma nova Categoria</a></p>
         </div>
         <div class="final">
